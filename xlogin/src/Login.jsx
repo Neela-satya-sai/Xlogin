@@ -40,10 +40,10 @@ function handleChange(e){
       <p>{status}</p>
       {!islogged &&  <form onSubmit={handleForm} > 
          <label>User:</label>
-         <input type="text" name='user' onChange={handleChange} value={formdata.user}/>
+         <input type="text" name='user' onChange={handleChange} value={formdata.user} required/>
 
          <label>Password:</label>
-         <input type="password" name='password' onChange={handleChange}  value={formdata.password}/>
+         <input type="password" name='password' onChange={handleChange}  value={formdata.password} required/>
 
          <button type="submit" >Submit</button>
 
