@@ -2,16 +2,16 @@ import React, { use, useState } from 'react'
 
 function Login() {
 
-  const[formdata, setFormdata]= useState({user:"", password:""});
+  const[formdata, setFormdata]= useState({username:"", password:""});
    const [islogged, setIsLogged]  = useState(false)
   const [status, setStatus] = useState("");
 
 function handleForm(e){
   e.preventDefault();
-   let user = e.target.elements.user.value;
+   let username = e.target.elements.username.value;
    let password = e.target.elements.password.value;
  //  setFormdata({...formdata, });
-  if(user==="user" && password==="password"){
+  if(username ==="user" && password==="password"){
     setIsLogged(true);
     setStatus("Welcome, user!");
   }
@@ -39,11 +39,11 @@ function handleChange(e){
       <h1>Login Page</h1>
       <p>{status}</p>
       {!islogged &&  <form onSubmit={handleForm} > 
-         <label htmlFor='user'>User:</label>
-         <input type="text" name='user' onChange={handleChange} value={formdata.user} required/>
+         <label htmlFor='user'>Username:</label>
+         <input type="text" name='username' onChange={handleChange} value={formdata.user} required placeholder='usename'/>
 
          <label htmlFor='password'>Password:</label>
-         <input type="password" name='password' onChange={handleChange}  value={formdata.password} required/>
+         <input type="password" name='password' onChange={handleChange}  value={formdata.password} required placeholder='password'/>
 
          <button type="submit" >Submit</button>
 
